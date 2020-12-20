@@ -13,9 +13,9 @@ plugins {
 group = "com.example"
 version = "0.0.1"
 
-application {
-    mainClassName = "io.ktor.server.netty.EngineMain"
-}
+//application {
+//    mainClassName = "io.ktor.server.netty.EngineMain"
+//}
 
 repositories {
     mavenLocal()
@@ -63,7 +63,7 @@ tasks.getByName("run"){
 
 
 application {
-    mainClassName = "ApplicationKt"
+    mainClassName = "com.example.ApplicationKt"
 }
 
 
