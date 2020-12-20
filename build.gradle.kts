@@ -8,6 +8,7 @@ val logback_version: String by project
 plugins {
     application
     kotlin("jvm") version "1.3.61"
+    id("com.google.cloud.tools.jib") version "2.7.0"
 }
 
 group = "com.example"
@@ -66,6 +67,24 @@ application {
     mainClassName = "com.example.ApplicationKt"
 }
 
+jib {
+//    from {
+//        image = 'openjdk:alpine'
+//    }
+//    to {
+//        image = 'localhost:5000/my-image/built-with-jib'
+//        credHelper = 'osxkeychain'
+//        tags = ['tag2', 'latest']
+//    }
+    container {
+//        jvmFlags = ['-Dmy.property=example.value', '-Xms512m', '-Xdebug']
+        mainClass = "com.example.ApplicationKt"
+//        args = ['some', 'args']
+//        ports = ['1000', '2000-2003/udp']
+//        labels = [key1:'value1', key2:'value2']
+//        format = 'OCI'
+    }
+}
 
 kotlin.sourceSets["main"].kotlin.srcDirs("src")
 kotlin.sourceSets["test"].kotlin.srcDirs("test")
